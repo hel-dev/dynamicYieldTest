@@ -18,8 +18,10 @@
     }
 
     const button1 = buttonFactory(document.createTextNode('Working link'), 'goTo', 'es/mujer/rebajas/camisas-c1010194041.html');
-    const button2 = buttonFactory(document.createTextNode('Non working link'), 'goTo1', 'es/mujer/rebajas/camisas-c1010194041.html', '100px');
-    const button3 = buttonFactory(document.createTextNode('Another non working link'), 'goTo', 123, '216px');
+    const button2 = buttonFactory(document.createTextNode('Category link'), 'goTo', 'category:1010194034', '100px');
+    const button3 = buttonFactory(document.createTextNode('Bad Category link'), 'goTo', 'category:123456789', '216px');
+    const button4 = buttonFactory(document.createTextNode('Non working link'), 'goTo1', 'es/mujer/rebajas/camisas-c1010194041.html', '350px');
+    const button5 = buttonFactory(document.createTextNode('Another non working link'), 'goTo', 123, '500px');
 
     customContentBridge.on('bsk-api-error',
       error => alert(error)
