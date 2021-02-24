@@ -20,7 +20,7 @@
     const button1 = buttonFactory(document.createTextNode('Working link'), {route: 'es/mujer/rebajas/camisas-c1010194041.html'});
     const button2 = buttonFactory(document.createTextNode('Non working link'), {routes: 'es/mujer/rebajas/camisas-c1010194041.html'}, '100px');
 
-    dynamicYieldBridge.on('dy-error', 
+    customContentBridge.on('bsk-api-error',
       error => alert(error)
     )
   });
