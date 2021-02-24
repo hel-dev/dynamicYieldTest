@@ -1,10 +1,10 @@
 (function(){
-  document.addEventListener('dynamicYieldBridgeReady', async e => {
-    const dynamicYieldBridge = e.detail;
+  document.addEventListener('customContentBridgeReady', async e => {
+    const customContentBridge = e.detail;
 
     function buttonFactory(title, message, right = '10px') {
       const button = document.createElement('button');
-      button.id = 'dynamicYieldButton';
+      button.id = 'customContentButton';
       button.style.position = 'fixed';
       button.style.right = right;
       button.style.bottom = '50px';
@@ -12,7 +12,7 @@
       button.appendChild(title);
       document.body.prepend(button);
       button.addEventListener('click', async (e) => {
-        response = await dynamicYieldBridge.processRequest(message);
+        response = await customContentBridge.processRequest(message);
       })
       return button
     }
