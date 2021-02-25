@@ -1,7 +1,5 @@
 (function(){
-  document.addEventListener('customContentBridgeReady', e => {
-    const customContentBridge = e.detail;
-
+  function dyInit() {
     function buttonFactory(title, action, param, right = '10px') {
       const button = document.createElement('button');
       button.id = 'customContentButton';
@@ -12,7 +10,7 @@
       button.appendChild(title);
       document.body.prepend(button);
       button.addEventListener('click', (e) => {
-        customContentBridge[action](param);
+        bskCustomContentBridge[action](param);
       })
       return button
     }
@@ -23,8 +21,18 @@
     const button4 = buttonFactory(document.createTextNode('Non working link'), 'goTo1', 'es/mujer/rebajas/camisas-c1010194041.html', '350px');
     const button5 = buttonFactory(document.createTextNode('Another non working link'), 'goTo', 123, '500px');
 
-    customContentBridge.on('bsk-api-error',
+    bskCustomContentBridge.on('bsk-api-error',
       error => alert(error)
     )
-  });
+  }
+
+  if (bskCustomContentBridge.ready) {
+    console.log(1)
+    dyInit();
+  } else {
+    document.addEventListener('bsk:customContentBridgeReady', e => {
+      console.log(2)
+      dyInit();
+    })
+  }
 })();
