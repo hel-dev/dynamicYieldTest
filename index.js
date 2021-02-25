@@ -26,13 +26,5 @@
     )
   }
 
-  if (bskCustomContentBridge.ready) {
-    console.log(1)
-    dyInit();
-  } else {
-    document.addEventListener('bsk:customContentBridgeReady', e => {
-      console.log(2)
-      dyInit();
-    })
-  }
+  bskCustomContentBridge.ready? dyInit() : document.addEventListener('bsk:customContentBridgeReady', dyInit)
 })();
