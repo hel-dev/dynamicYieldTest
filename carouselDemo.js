@@ -1,4 +1,4 @@
-const swipperHtml = \`
+const swipperHtml = `
   <style>
     .swiper-container {
       //position: fixed;
@@ -31,7 +31,7 @@ const swipperHtml = \`
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
   </div>
-\`;
+`;
 
 (function () {
   bskCustomContent().then(
