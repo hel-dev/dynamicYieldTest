@@ -1,6 +1,8 @@
 const swipperHtml = `
   <style>
     .swiper-container {
+      //position: fixed;
+      bottom: 0;
       width: 100%;
       height: 100px;
       background: white;
@@ -37,7 +39,7 @@ const swipperHtml = `
       bskCustomContentClient.on('bsk-api-error',
         error => console.log('bsk-api-error', error)
       )
-      await bskCustomContentClient.appendHtml(swipperHtml, '.category-product-card');
+      await bskCustomContentClient.appendHtml(swipperHtml, '.category-product-cardy').catch( e => console.log(e) );
       bskCustomContentClient.carousel('.swiper-container', {loop: true, slidesPerView: 3});
     }
   );
