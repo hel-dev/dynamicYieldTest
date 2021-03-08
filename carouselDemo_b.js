@@ -1,8 +1,6 @@
 const swipperHtml = `
   <style>
     .swiper-container {
-      //position: fixed;
-      bottom: 0;
       width: 100%;
       height: 100px;
       background: white;
