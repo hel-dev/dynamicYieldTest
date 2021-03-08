@@ -37,7 +37,7 @@ const swipperHtml = `
       bskCustomContentClient.on('bsk-api-error',
         error => console.log('bsk-api-error', error)
       )
-      await bskCustomContentClient.appendHtml(swipperHtml, '.category-product-cardy').catch( e => console.log(e) );
+      await bskCustomContentClient.appendHtml(swipperHtml, '.category-product-card').catch( e => console.log(e) );
       bskCustomContentClient.carousel('.swiper-container', {loop: true, slidesPerView: 3});
     }
   );
