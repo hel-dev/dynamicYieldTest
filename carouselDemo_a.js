@@ -6,6 +6,7 @@ const swipperHtml = `
       width: 100%;
       height: 100px;
       background: white;
+      z-index: 1000000000000000000;
     }
 
     .swiper-container .swiper-slide {
@@ -16,7 +17,7 @@ const swipperHtml = `
   </style>
 
   <!-- Slider main container -->
-  <div class="swiper-container">
+  <div id="bsk-swiper" class="swiper-container">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
@@ -40,7 +41,15 @@ const swipperHtml = `
         error => console.log('bsk-api-error', error)
       )
       await bskCustomContentClient.appendHtml(swipperHtml).catch( e => console.log(e) );
-      bskCustomContentClient.carousel('.swiper-container', {loop: true, slidesPerView: 3});
+    	const carousel = bskCustomContentClient.carousel();
+			new carousel('#bsk-swiper',{
+  		loop: true,
+  		slidesPerView: 3,
+  		navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }
+			})
     }
   );
 })();
