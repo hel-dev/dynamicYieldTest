@@ -41,15 +41,15 @@ const swipperHtml = `
         error => console.log('bsk-api-error', error)
       )
       await bskCustomContentClient.appendHtml(swipperHtml).catch( e => console.log(e) );
-    	const carousel = bskCustomContentClient.carousel();
-			new carousel('#bsk-swiper',{
-	  		loop: true,
-	  		slidesPerView: 3,
-	  		navigation: {
+    	const swiper = bskCustomContentClient.swiper();
+      const carousel = new swiper('#bsk-swiper',{
+        loop: true,
+        slidesPerView: 3,
+        navigation: {
           nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
+          prevEl: '.swiper-button-prev',
         }
-			})
+      });
     }
   );
 })();
