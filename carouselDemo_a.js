@@ -6,7 +6,7 @@ const swipperHtml = `
       width: 100%;
       height: 100px;
       background: white;
-      z-index: 1000000000000000000;
+      z-index: 10000;
     }
 
     .swiper-container .swiper-slide {
@@ -43,11 +43,11 @@ const swipperHtml = `
       await bskCustomContentClient.appendHtml(swipperHtml).catch( e => console.log(e) );
     	const carousel = bskCustomContentClient.carousel();
 			new carousel('#bsk-swiper',{
-  		loop: true,
-  		slidesPerView: 3,
-  		navigation: {
+	  		loop: true,
+	  		slidesPerView: 3,
+	  		navigation: {
           nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          prevEl: '.swiper-button-prev'
         }
 			})
     }
