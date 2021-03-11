@@ -40,7 +40,7 @@ const swipperHtml = `
       bskCustomContentClient.on('bsk-api-error',
         error => console.log('bsk-api-error', error)
       )
-      await bskCustomContentClient.appendHtml(swipperHtml).catch( e => console.log(e) );
+      await bskCustomContentClient.appendHtml(swipperHtml, '#main-container').catch( e => console.log(e) );
     	const swiper = bskCustomContentClient.swiper();
       const carousel = new swiper('#bsk-swiper',{
         loop: true,
